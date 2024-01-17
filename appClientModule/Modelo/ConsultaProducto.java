@@ -130,7 +130,7 @@ public class ConsultaProducto extends Conexion{
 		
 		if(rs.next())
 		{
-			pro.setId (rs.getString("id"));
+			pro.setId(rs.getInt("id"));
 			pro.setCodigo_usuario(rs.getInt("codigo"));
 			pro.setNombres(rs.getString("nombres"));
 			pro.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
