@@ -139,7 +139,7 @@ public class ConsultaProducto extends Conexion{
 			
 			return true;
 		}
-		
+		//mdmdld//
 		return false;
 		
 		} catch(SQLException e)
