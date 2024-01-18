@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ConsultaProducto extends Conexion{
+public class ConsultasProducto extends Conexion{
 
 	public boolean registrar(Producto pro)
 	{
@@ -139,7 +139,7 @@ public class ConsultaProducto extends Conexion{
 			
 			return true;
 		}
-		//mdmdld//
+		
 		return false;
 		
 		} catch(SQLException e)
