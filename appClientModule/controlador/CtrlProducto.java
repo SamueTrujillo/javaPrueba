@@ -1,7 +1,10 @@
 package controlador;
 
+import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
 
 import javax.swing.JOptionPane;
 
@@ -15,8 +18,9 @@ public class CtrlProducto  implements ActionListener {
 	private ConsultasProducto modC;
 	private frmProducto frm;
 	
-	public CtrlProducto (Producto mod, ConsultasProducto, ConsultasProducto modC, frmProducto frm)
+	public CtrlProducto (Producto mod, ConsultasProducto modC, frmProducto frm)
 	{
+		
 		this.mod = mod;
 		this.modC = modC;
 		this.frm = frm;
@@ -31,7 +35,7 @@ public class CtrlProducto  implements ActionListener {
 	public void iniciar () {
 		
 		frm.setTitle("Biblioteca");
-		frm.setLocationRelative(null);
+		frm.setLocationRelativeTo(null);
 		frm.txtId.setVisible(false);
 		
 		
@@ -93,6 +97,7 @@ public class CtrlProducto  implements ActionListener {
 			}
 		}
 		
+		
 		if(e.getSource()== frm.btnBuscar)
 		{
 			
@@ -128,14 +133,13 @@ public class CtrlProducto  implements ActionListener {
 	public void Limpiar ()
 	{
 		frm.txtId.setText(null);
-		frm.txtCodigoUsuario(null);
-		frm.txtNombres(null);
-		frm.txtFechaNacimiento(null);
-		frm.txtTelefono(null);
-		frm.txtEstado(null);
+		frm.txtCodigoUsuario.setText(null);
+		frm.txtNombres.setText(null);
+		frm.txtFechaNacimiento.setText(null);
+		frm.txtTelefono.setText(null);
+		frm.txtEstado.setText(null);
 		
-		
-;		
+			
 		
 	}
 

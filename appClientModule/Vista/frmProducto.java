@@ -14,12 +14,17 @@ public class frmProducto extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JTextField txtCodigoUsuario;
-    private JTextField txtNombres;
-    private JTextField txtFechaNacimiento;
-    private JTextField txtTelefono;
-    private JTextField txtEstado;
-    private JTextField txtId;
+    public JTextField txtCodigoUsuario;
+    public JTextField txtNombres;
+    public JTextField txtFechaNacimiento;
+    public JTextField txtTelefono;
+    public JTextField txtEstado;
+    public JTextField txtId;
+    public JButton btnGuardar;
+    public JButton btnBuscar;
+    public JButton btnLimpiar;
+    public JButton btnModificar;
+    public JButton btnEliminar;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -53,6 +58,7 @@ public class frmProducto extends JFrame {
         contentPane.add(txtCodigoUsuario);
 
         // Agregar un JButton
+        
         JButton btnGuardar = new JButton("Guardar");
         btnGuardar.setBounds(52, 300, 89, 23);
         contentPane.add(btnGuardar);
