@@ -59,7 +59,7 @@ public class frmProducto extends JFrame {
 
         // Agregar un JButton
         
-        JButton btnGuardar = new JButton("Guardar");
+        btnGuardar = new JButton("Guardar");
         btnGuardar.setBounds(52, 300, 89, 23);
         contentPane.add(btnGuardar);
         
@@ -71,15 +71,15 @@ public class frmProducto extends JFrame {
         lblNewLabel_1_1.setBounds(70, 159, 84, 14);
         contentPane.add(lblNewLabel_1_1);
         
-        JButton btnModificar = new JButton("Modificar");
+        btnModificar = new JButton("Modificar");
         btnModificar.setBounds(151, 300, 85, 23);
         contentPane.add(btnModificar);
         
-        JButton btnEliminar = new JButton("Eliminar");
+        btnEliminar = new JButton("Eliminar");
         btnEliminar.setBounds(246, 300, 77, 23);
         contentPane.add(btnEliminar);
         
-        JButton btnLimpiar = new JButton("Limpiar");
+        btnLimpiar = new JButton("Limpiar");
         btnLimpiar.setBounds(333, 300, 84, 23);
         contentPane.add(btnLimpiar);
         
@@ -107,7 +107,7 @@ public class frmProducto extends JFrame {
         txtEstado.setBounds(164, 234, 86, 20);
         contentPane.add(txtEstado);
         
-        JButton btnBuscar = new JButton("Buscar");
+        btnBuscar = new JButton("Buscar");
         btnBuscar.setBounds(310, 56, 77, 23);
         contentPane.add(btnBuscar);
         

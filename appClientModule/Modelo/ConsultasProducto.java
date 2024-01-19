@@ -13,7 +13,7 @@ public class ConsultasProducto extends Conexion{
 		Connection con = getConexion();
 		
 		
-		String sql = "INSERT INTO producto (Codigo_usuario, nombres, fecha_nacimiento, telefono, estado)"
+		String sql = "INSERT INTO usuarios (codigo_usuario, nombres, fecha_nacimiento, telefono, estado)"
 				+ "VALUES(?,?,?,?,?)";
 		
 		try {
@@ -50,7 +50,7 @@ public class ConsultasProducto extends Conexion{
 		Connection con = getConexion();
 		
 		
-		String sql = "UPDATE producto SET Codigo_usuario=?, nombres=?, fecha_nacimiento=?, telefono=?, estado=?, WHERE id=?";
+		String sql = "UPDATE usuarios SET codigo_usuario=?, nombres=?, fecha_nacimiento=?, telefono=?, estado=?, WHERE codigo_usuario=?";
 		
 		try {
 		
@@ -87,12 +87,12 @@ public class ConsultasProducto extends Conexion{
 		Connection con = getConexion();
 		
 		
-		String sql = "DELETE FROM producto WHERE id=?";
+		String sql = "DELETE FROM usuarios WHERE codigo_usuario=?";
 		
 		try {
 		
 		ps = con.prepareStatement(sql);
-		ps.setInt(1, pro.getId());
+		ps.setInt(1, pro.getCodigo_usuario());
 		ps.execute();	
 		return true;
 		
@@ -120,7 +120,7 @@ public class ConsultasProducto extends Conexion{
 		Connection con = getConexion();
 		
 		
-		String sql = "SELECT * FROM producto WHERE codigo=?";
+		String sql = "SELECT * FROM usuarios WHERE codigo_usuario=?";
 		
 		try {
 		
@@ -130,8 +130,8 @@ public class ConsultasProducto extends Conexion{
 		
 		if(rs.next())
 		{
-			pro.setId(rs.getInt("id"));
-			pro.setCodigo_usuario(rs.getInt("codigo"));
+			
+			pro.setCodigo_usuario(rs.getInt("codigo_usuario"));
 			pro.setNombres(rs.getString("nombres"));
 			pro.setFecha_nacimiento(rs.getString("fecha_nacimiento"));
 			pro.setTelefono(rs.getString("telefono"));
