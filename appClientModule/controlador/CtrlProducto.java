@@ -47,7 +47,7 @@ public class CtrlProducto  implements ActionListener {
 	{
 		if(e.getSource()== frm.btnGuardar)
 		{
-			mod.setCodigo_usuario(frm.txtCodigoUsuario.getText());
+			mod.setCodigo_usuario(Integer.parseInt(frm.txtCodigoUsuario.getText()));
 			mod.setNombres(frm.txtNombres.getText());
 			mod.setFecha_nacimiento(frm.txtFechaNacimiento.getText());
 			mod.setTelefono(frm.txtTelefono.getText());
@@ -65,8 +65,8 @@ public class CtrlProducto  implements ActionListener {
 		
 		if(e.getSource()== frm.btnModificar)
 		{
-			mod.setId(frm.txtId.getText());
-			mod.setCodigo_usuario(frm.txtCodigoUsuario.getText());
+			mod.setId(Integer.parseInt( frm.txtId.getText()));
+			mod.setCodigo_usuario(Integer.parseInt(frm.txtCodigoUsuario.getText()));
 			mod.setNombres(frm.txtNombres.getText());
 			mod.setFecha_nacimiento(frm.txtFechaNacimiento.getText());
 			mod.setTelefono(frm.txtTelefono.getText());
@@ -84,7 +84,7 @@ public class CtrlProducto  implements ActionListener {
 		
 		if(e.getSource()== frm.btnEliminar)
 		{
-			mod.setId(frm.txtId.getText());
+			mod.setId(Integer.parseInt(frm.txtId.getText()));
 			
 			
 			if(modC.eliminar(mod))
@@ -101,7 +101,7 @@ public class CtrlProducto  implements ActionListener {
 		if(e.getSource()== frm.btnBuscar)
 		{
 			
-			mod.setCodigo_usuario(frm.txtCodigoUsuario.getText());
+			mod.setCodigo_usuario(Integer.parseInt(frm.txtCodigoUsuario.getText()));
 			
 			if(modC.buscar(mod))
 			{
