@@ -50,17 +50,17 @@ public class ConsultasProducto extends Conexion{
 		Connection con = getConexion();
 		
 		
-		String sql = "UPDATE usuarios SET codigo_usuario=?, nombres=?, fecha_nacimiento=?, telefono=?, estado=?, WHERE codigo_usuario=?";
+		String sql = "UPDATE usuarios SET nombres=?, fecha_nacimiento=?, telefono=?, estado=?, WHERE codigo_usuario=?";
 		
 		try {
 		
 		ps = con.prepareStatement(sql);
 		ps.setInt(1, pro.getCodigo_usuario());
-		ps.setString(3, pro.getNombres());
-		ps.setString(4, pro.getFecha_nacimiento());
-		ps.setString(5, pro.getTelefono());
-		ps.setBoolean(6, false);
-		ps.setInt(7, pro.getId());
+		ps.setString(2, pro.getNombres());
+		ps.setString(3, pro.getFecha_nacimiento());
+		ps.setString(4, pro.getTelefono());
+		ps.setBoolean(5, false);
+		ps.setInt(6, pro.getId());
 		ps.execute();	
 		return true;
 		
