@@ -70,7 +70,7 @@ public class CtrlProducto  implements ActionListener {
 			mod.setNombres(frm.txtNombres.getText());
 			mod.setFecha_nacimiento(frm.txtFechaNacimiento.getText());
 			mod.setTelefono(frm.txtTelefono.getText());
-			mod.setEstado(true);
+			mod.setEstado(false);
 			
 			if(modC.modificar(mod))
 			{
@@ -109,7 +109,8 @@ public class CtrlProducto  implements ActionListener {
 				frm.txtCodigoUsuario.setText(String.valueOf(mod.getCodigo_usuario()));
 				frm.txtNombres.setText(mod.getNombres());
 				frm.txtFechaNacimiento.setText(mod.getFecha_nacimiento());
-				frm.txtTelefono.setText(mod.getTelefono());			
+				frm.txtTelefono.setText(mod.getTelefono());	
+				frm.txtEstado.setText(String.valueOf(mod.isEstado()));
 				
 				
 			} else {

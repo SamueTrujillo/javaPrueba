@@ -23,7 +23,7 @@ public class ConsultasProducto extends Conexion{
 		ps.setString(2, pro.getNombres());
 		ps.setString(3, pro.getFecha_nacimiento());
 		ps.setString(4, pro.getTelefono());
-		ps.setBoolean(5, false);
+		ps.setBoolean(5, pro.isEstado());
 		ps.execute();	
 		return true;
 		
@@ -55,11 +55,12 @@ public class ConsultasProducto extends Conexion{
 		try {
 		
 		ps = con.prepareStatement(sql);
-		ps.setInt(1, pro.getCodigo_usuario());
-		ps.setString(2, pro.getNombres());
-		ps.setString(3, pro.getFecha_nacimiento());
-		ps.setString(4, pro.getTelefono());
-		ps.setBoolean(5, false);
+		
+		ps.setString(1, pro.getNombres());
+		ps.setString(2, pro.getFecha_nacimiento());
+		ps.setString(3, pro.getTelefono());
+		ps.setBoolean(4, false);
+		ps.setInt(5, pro.getCodigo_usuario());
 		
 		ps.execute();	
 		return true;
