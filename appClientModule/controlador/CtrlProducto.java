@@ -65,7 +65,7 @@ public class CtrlProducto  implements ActionListener {
 		
 		if(e.getSource()== frm.btnModificar)
 		{
-			mod.setId(Integer.parseInt( frm.txtId.getText()));
+			
 			mod.setCodigo_usuario(Integer.parseInt(frm.txtCodigoUsuario.getText()));
 			mod.setNombres(frm.txtNombres.getText());
 			mod.setFecha_nacimiento(frm.txtFechaNacimiento.getText());
