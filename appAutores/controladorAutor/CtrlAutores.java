@@ -45,12 +45,10 @@ public class CtrlAutores implements ActionListener {
 	{
 		if(e.getSource()== frm.btnGuardar)
 		{
-			mod.setCodigo_copia(Integer.parseInt(frm.txtCodigoCopia.getText()));
-			mod.setNumero_ISBN(frm.txtNumeroISBN.getText());
-			mod.setCategoria(frm.txtCategoria.getText());
-			//mod.set(frm.txtTelefono.getText());
-			mod.setEstado(true);
-			mod.setNombre_libro(frm.txtNombreLibro.getText());
+			mod.setCodigo_autor(Integer.parseInt(frm.txtCodigoAutor.getText()));
+			mod.setNombres(frm.txtNombresAutor.getText());
+			mod.setNacionalidad(frm.txtNacionalidad.getText());
+			mod.setFecha_nacimiento(frm.txtFechaNacimiento.getText());
 			
 			if(modC.registrar(mod))
 			{
@@ -65,12 +63,10 @@ public class CtrlAutores implements ActionListener {
 		if(e.getSource()== frm.btnModificar)
 		{
 			
-			mod.setCodigo_copia(Integer.parseInt(frm.txtCodigoCopia.getText()));
-			mod.setNumero_ISBN(frm.txtNumeroISBN.getText());
-			mod.setCategoria(frm.txtCategoria.getText());
-			//mod.setTelefono(frm.txtTelefono.getText());
-			mod.setEstado(false);
-			mod.setNombre_libro(frm.txtNombreLibro.getText());
+			mod.setCodigo_autor(Integer.parseInt(frm.txtCodigoAutor.getText()));
+			mod.setNombres(frm.txtNombresAutor.getText());
+			mod.setNacionalidad(frm.txtNacionalidad.getText());
+			mod.setFecha_nacimiento(frm.txtFechaNacimiento.getText());
 			
 			if(modC.modificar(mod))
 			{
@@ -84,7 +80,7 @@ public class CtrlAutores implements ActionListener {
 		
 		if(e.getSource()== frm.btnEliminar)
 		{
-			mod.setCodigo_copia(Integer.parseInt(frm.txtId.getText()));
+			mod.setCodigo_autor(Integer.parseInt(frm.txtId.getText()));
 			
 			
 			if(modC.eliminar(mod))
@@ -101,17 +97,15 @@ public class CtrlAutores implements ActionListener {
 		if(e.getSource()== frm.btnBuscar)
 		{
 			
-			mod.setCodigo_copia(Integer.parseInt(frm.txtCodigoCopia.getText()));
+			mod.setCodigo_autor(Integer.parseInt(frm.txtCodigoAutor.getText()));
 			
 			if(modC.buscar(mod))
 			{
 				
-				frm.txtCodigoCopia.setText(String.valueOf(mod.getCodigo_copia()));
-				frm.txtNumeroISBN.setText(mod.getNumero_ISBN());
-				frm.txtCategoria.setText(mod.getCategoria());
-				//frm.txtTelefono.setText(mod.getTelefono());	
-				frm.txtEstado.setText(String.valueOf(mod.isEstado()));
-				frm.txtNombreLibro.setText(mod.getNombre_libro());
+				frm.txtCodigoAutor.setText(String.valueOf(mod.getCodigo_autor()));
+				frm.txtNombresAutor.setText(mod.getNombres());
+				frm.txtNacionalidad.setText(mod.getNacionalidad());
+				frm.txtFechaNacimiento.setText(mod.getFecha_nacimiento());
 				
 				
 			} else {
@@ -135,12 +129,10 @@ public class CtrlAutores implements ActionListener {
 	public void Limpiar ()
 	{
 		
-		frm.txtCodigoCopia.setText(null);
-		frm.txtNumeroISBN.setText(null);
-		frm.txtCategoria.setText(null);
-		//frm.txtTelefono.setText(null);
-		frm.txtEstado.setText(null);
-		frm.txtNombreLibro.setText(null);
+		frm.txtCodigoAutor.setText(null);
+		frm.txtNombresAutor.setText(null);
+		frm.txtNacionalidad.setText(null);
+		frm.txtFechaNacimiento.setText(null);
 		
 			
 		
