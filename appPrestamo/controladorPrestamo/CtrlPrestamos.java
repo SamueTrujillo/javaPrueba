@@ -47,8 +47,8 @@ public class CtrlPrestamos implements ActionListener {
 		if(e.getSource()== frm.btnGuardar)
 		{
 			mod.setCodigo_prestamo(Integer.parseInt(frm.txtCodigoPrestamo.getText()));
-			//mod.setNumero_ISBN(frm.txtNumeroISBN.getText());
-			//mod.setCategoria(frm.txtCategoria.getText());
+			mod.setCodigo_foraneo_copia(Integer.parseInt(frm.txtCodigoFCopia.getText()));
+			mod.setCodigo_foraneo_usuario(Integer.parseInt(frm.txtCodigoFUsuario.getText()));
 			mod.setFecha_prestamo(frm.txtFechaPrestamo.getText());
 			mod.setFecha_devolucion(frm.txtFechaDevolucion.getText());
 			mod.setEstado(true);
@@ -68,8 +68,8 @@ public class CtrlPrestamos implements ActionListener {
 		{
 			
 			mod.setCodigo_prestamo(Integer.parseInt(frm.txtCodigoPrestamo.getText()));
-			//mod.setNumero_ISBN(frm.txtNumeroISBN.getText());
-			//mod.setCategoria(frm.txtCategoria.getText());
+			mod.setCodigo_foraneo_copia(Integer.parseInt(frm.txtCodigoFCopia.getText()));
+			mod.setCodigo_foraneo_usuario(Integer.parseInt(frm.txtCodigoFUsuario.getText()));
 			mod.setFecha_prestamo(frm.txtFechaPrestamo.getText());
 			mod.setFecha_devolucion(frm.txtFechaDevolucion.getText());
 			mod.setEstado(false);
@@ -109,8 +109,8 @@ public class CtrlPrestamos implements ActionListener {
 			{
 				
 				frm.txtCodigoPrestamo.setText(String.valueOf(mod.getCodigo_prestamo()));
-				//frm.txtNumeroISBN.setText(mod.getNumero_ISBN());
-				//frm.txtCategoria.setText(mod.getCategoria());
+				frm.txtCodigoFCopia.setText(String.valueOf(mod.getCodigo_foraneo_usuario()));
+				frm.txtCodigoFUsuario.setText(String.valueOf(mod.getCodigo_foraneo_copia()));
 				frm.txtFechaPrestamo.setText(mod.getFecha_prestamo());	
 				frm.txtFechaDevolucion.setText(mod.getFecha_devolucion());
 				frm.txtEstado.setText(String.valueOf(mod.isEstado()));
@@ -138,8 +138,8 @@ public class CtrlPrestamos implements ActionListener {
 	{
 		
 		frm.txtCodigoPrestamo.setText(null);
-		//frm.txtNumeroISBN.setText(null);
-		//frm.txtCategoria.setText(null);
+		frm.txtCodigoFCopia.setText(null);
+		frm.txtCodigoFUsuario.setText(null);
 		frm.txtFechaPrestamo.setText(null);
 		frm.txtFechaDevolucion.setText(null);
 		frm.txtEstado.setText(null);

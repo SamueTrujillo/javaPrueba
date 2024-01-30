@@ -15,15 +15,15 @@ public class ConsultasPrestamos extends ConexionPrestamos {
 		Connection con = getConexion();
 		
 		
-		String sql = "INSERT INTO prestamos (codigo_prestamo, fecha_foraneo_copia, codigo_foraneo_usuario, fecha_prestamo, fecha_devolucion, estado)"
+		String sql = "INSERT INTO prestamos (codigo_prestamo, codigo_foraneo_copia, codigo_foraneo_usuario, fecha_prestamo, fecha_devolucion, estado)"
 				+ "VALUES(?,?,?,?,?,?)";
 		
 		try {
 		
 		ps = con.prepareStatement(sql);
 		ps.setInt(1, pre.getCodigo_prestamo());
-		//ps.setString(2, pre.get());
-		//ps.setString(3, lib.getCategoria());
+		ps.setInt(2, pre.getCodigo_foraneo_copia());
+		ps.setInt(3, pre.getCodigo_foraneo_usuario());
 		ps.setString(4, pre.getFecha_prestamo());
 		ps.setString(5, pre.getFecha_devolucion());
 		ps.setBoolean(6, pre.isEstado());
@@ -53,14 +53,14 @@ public class ConsultasPrestamos extends ConexionPrestamos {
 		Connection con = getConexion();
 		
 		
-		String sql = "UPDATE prestamos SET codigo_prestamo=?, fecha_foraneo_copia=?, codigo_foraneo_usuario=?, fecha_prestamo=?, fecha_devolucion=?, estado=? WHERE codigo_prestamo=?";
+		String sql = "UPDATE prestamos SET codigo_prestamo=?, codigo_foraneo_copia=?, codigo_foraneo_usuario=?, fecha_prestamo=?, fecha_devolucion=?, estado=? WHERE codigo_prestamo=?";
 		
 		try {
 		
 		ps = con.prepareStatement(sql);
 		
-		//ps.setString(1, pre.getNumero_ISBN());
-		//ps.setString(2, lib.getCategoria());
+		ps.setInt(1, pre.getCodigo_foraneo_copia());
+		ps.setInt(2, pre.getCodigo_foraneo_usuario());
 		ps.setString(3, pre.getFecha_prestamo());
 		ps.setString(4, pre.getFecha_devolucion());
 		ps.setBoolean(5, pre.isEstado());
@@ -138,8 +138,8 @@ public class ConsultasPrestamos extends ConexionPrestamos {
 			
 			
 			pre.setCodigo_prestamo(rs.getInt("codigo_prestamo"));
-			//lib.setNumero_ISBN(rs.getString("numero_isbn"));
-			//lib.setCategoria(rs.getString("categoria"));
+			pre.setCodigo_foraneo_copia(rs.getInt("codigo_foraneo_copia"));
+			pre.setCodigo_foraneo_usuario(rs.getInt("codigo_foraneo_usuario"));
 			pre.setFecha_prestamo(rs.getString("fecha_prestamo"));
 			pre.setFecha_devolucion(rs.getString("fecha_devolucion"));
 			pre.setEstado(rs.getBoolean("vigente"));

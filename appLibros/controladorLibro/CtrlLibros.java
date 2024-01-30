@@ -49,7 +49,7 @@ public class CtrlLibros implements ActionListener  {
 			mod.setCodigo_copia(Integer.parseInt(frm.txtCodigoCopia.getText()));
 			mod.setNumero_ISBN(frm.txtNumeroISBN.getText());
 			mod.setCategoria(frm.txtCategoria.getText());
-			//mod.set(frm.txtTelefono.getText());
+			mod.setAutor(Integer.parseInt(frm.txtForaneoAutor.getText()));
 			mod.setEstado(true);
 			mod.setNombre_libro(frm.txtNombreLibro.getText());
 			
@@ -69,7 +69,7 @@ public class CtrlLibros implements ActionListener  {
 			mod.setCodigo_copia(Integer.parseInt(frm.txtCodigoCopia.getText()));
 			mod.setNumero_ISBN(frm.txtNumeroISBN.getText());
 			mod.setCategoria(frm.txtCategoria.getText());
-			//mod.setTelefono(frm.txtTelefono.getText());
+			mod.setAutor(Integer.parseInt(frm.txtForaneoAutor.getText()));
 			mod.setEstado(false);
 			mod.setNombre_libro(frm.txtNombreLibro.getText());
 			
@@ -110,7 +110,7 @@ public class CtrlLibros implements ActionListener  {
 				frm.txtCodigoCopia.setText(String.valueOf(mod.getCodigo_copia()));
 				frm.txtNumeroISBN.setText(mod.getNumero_ISBN());
 				frm.txtCategoria.setText(mod.getCategoria());
-				//frm.txtTelefono.setText(mod.getTelefono());	
+				frm.txtForaneoAutor.setText(String.valueOf(mod.getAutor()));	
 				frm.txtEstado.setText(String.valueOf(mod.isEstado()));
 				frm.txtNombreLibro.setText(mod.getNombre_libro());
 				
@@ -139,7 +139,7 @@ public class CtrlLibros implements ActionListener  {
 		frm.txtCodigoCopia.setText(null);
 		frm.txtNumeroISBN.setText(null);
 		frm.txtCategoria.setText(null);
-		//frm.txtTelefono.setText(null);
+		frm.txtForaneoAutor.setText(null);
 		frm.txtEstado.setText(null);
 		frm.txtNombreLibro.setText(null);
 		

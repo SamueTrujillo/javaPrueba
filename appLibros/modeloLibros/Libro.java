@@ -1,12 +1,27 @@
 package modeloLibros;
 
+import modeloAutores.Autor;
+
 public class Libro {
 	
 	private int codigo_copia;
 	private String numero_ISBN;
 	private String categoria;
+	private int autor;
 	private boolean estado;
 	private String nombre_libro;
+	
+	
+	
+	
+
+	
+	public int getAutor() {
+		return autor;
+	}
+	public void setAutor(int autor) {
+		this.autor = autor;
+	}
 	public int getCodigo_copia() {
 		return codigo_copia;
 	}

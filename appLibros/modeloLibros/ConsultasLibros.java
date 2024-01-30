@@ -6,8 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
+import modeloAutores.Autor;
+import modeloAutores.ConsultasAutores;
 
 public class ConsultasLibros extends ConexionLibros {
+	
+	
 
 	public boolean registrar(Libro lib)
 	{
@@ -19,12 +23,15 @@ public class ConsultasLibros extends ConexionLibros {
 				+ "VALUES(?,?,?,?,?,?)";
 		
 		try {
+			
+			
+			
 		
 		ps = con.prepareStatement(sql);
 		ps.setInt(1, lib.getCodigo_copia());
 		ps.setString(2, lib.getNumero_ISBN());
 		ps.setString(3, lib.getCategoria());
-		//ps.setString(4, lib.autor);
+		ps.setInt(4, lib.getAutor());
 		ps.setBoolean(5, lib.isEstado());
 		ps.setString(6, lib.getNombre_libro());
 		ps.execute();	
@@ -61,7 +68,7 @@ public class ConsultasLibros extends ConexionLibros {
 		
 		ps.setString(1, lib.getNumero_ISBN());
 		ps.setString(2, lib.getCategoria());
-		//ps.setString(3, lib.autot);
+		ps.setInt(3, lib.getAutor());
 		ps.setBoolean(4, false);
 		ps.setString(5, lib.getNombre_libro());
 		ps.setInt(6, lib.getCodigo_copia());
@@ -136,11 +143,17 @@ public class ConsultasLibros extends ConexionLibros {
 		if(rs.next())
 		{
 			
+			/*int codigoAutor = rs.getInt("codigo_foraneo_autor");
+			
+			ConsultasAutores consultasAutores = new ConsultasAutores();
+			Autor autor = new Autor();
+			autor.setCodigo_autor(codigoAutor);
+			consultasAutores.buscar(autor);*/
 			
 			lib.setCodigo_copia(rs.getInt("codigo_copia"));
 			lib.setNumero_ISBN(rs.getString("numero_isbn"));
 			lib.setCategoria(rs.getString("categoria"));
-			//lib.set
+			lib.setAutor(rs.getInt("codigo_foraneo_autor"));
 			lib.setEstado(rs.getBoolean("estado"));
 			lib.setNombre_libro(rs.getString("nombre_libro"));
 			

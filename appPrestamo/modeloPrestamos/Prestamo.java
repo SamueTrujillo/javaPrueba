@@ -3,9 +3,26 @@ package modeloPrestamos;
 public class Prestamo {
 
 	private int codigo_prestamo;
+	private int codigo_foraneo_copia;
+	private int codigo_foraneo_usuario;
 	private String fecha_prestamo;
 	private String fecha_devolucion;
 	private boolean estado;
+	
+	
+	
+	public int getCodigo_foraneo_copia() {
+		return codigo_foraneo_copia;
+	}
+	public void setCodigo_foraneo_copia(int codigo_foraneo_copia) {
+		this.codigo_foraneo_copia = codigo_foraneo_copia;
+	}
+	public int getCodigo_foraneo_usuario() {
+		return codigo_foraneo_usuario;
+	}
+	public void setCodigo_foraneo_usuario(int codigo_foraneo_usuario) {
+		this.codigo_foraneo_usuario = codigo_foraneo_usuario;
+	}
 	public int getCodigo_prestamo() {
 		return codigo_prestamo;
 	}
